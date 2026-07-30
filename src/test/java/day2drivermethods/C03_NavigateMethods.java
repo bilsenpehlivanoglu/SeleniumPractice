@@ -15,6 +15,7 @@ public class C03_NavigateMethods {
 
         //go to amazon page https://www.amazon.com/
         driver.navigate().to("https://www.amazon.com/");
+        Thread.sleep(3000);
 
         //go back to techproeducation page
         driver.navigate().back();
