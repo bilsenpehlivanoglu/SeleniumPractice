@@ -1,9 +1,6 @@
 package day03_implicitlywait_junit;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 public class C03_BeforeAfter {
 
@@ -21,7 +18,7 @@ public class C03_BeforeAfter {
     void test01() {
         System.out.println("test01 calisti");
     }
-    @Test
+    @Test @Disabled
     void test02() {
         System.out.println("test02 calisti");
     }
@@ -32,6 +29,11 @@ public class C03_BeforeAfter {
 
     @AfterEach
     void tearDown() {
+
+    }
+
+    @AfterAll
+    static void afterAll() {
 
     }
 }
