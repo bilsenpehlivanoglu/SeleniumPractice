@@ -16,4 +16,39 @@ public class C01_Assertions {
         String actualData = "Junit 4";
         Assertions.assertEquals(expectedData,actualData);
     }
+
+    @Test
+    void test02() {
+        Assertions.assertTrue(3<5);
+    }
+
+    @Test
+    void test03(){
+        Assertions.assertFalse("selenium".contains("E"));//pass
+    }
+
+    @Test
+    void test04() {
+        Assertions.assertNotEquals("selenium","junit");//pass
+    }
+
+    @Test
+    void test05() {
+        char [] expectedArray = {'j','u','n','i','t'};
+        char [] actualArray = {'J','u','n','i','t'};
+        Assertions.assertArrayEquals(expectedArray,actualArray);//fail
+        //iki arrayin esit olabilmesi icin ayni indexte ayni eleman olmasi gerekir.
+    }
+
+    @Test
+    void test06() {
+        String str = null;
+        Assertions.assertNull(str);
+    }
+
+    @Test
+    void test07() {
+        String str = "junit";
+        Assertions.assertNotNull(str);//pass
+    }
 }
