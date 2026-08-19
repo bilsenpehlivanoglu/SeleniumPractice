@@ -14,6 +14,10 @@ public class C04_RadioButton {
     //locate "radio buttons" elements
     //if it is not selected, choose the one that suits you from the gender button.
 
+    /*
+    radio button larda sadece bir tane sacenek secilebilir
+    check bix larda birden fazla secim yapilabilir
+     */
 
     @Test
     void test01() throws InterruptedException {
