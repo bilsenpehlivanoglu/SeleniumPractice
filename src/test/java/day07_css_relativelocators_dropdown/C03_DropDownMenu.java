@@ -1,6 +1,7 @@
 package day07_css_relativelocators_dropdown;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -48,11 +49,11 @@ public class C03_DropDownMenu {
     //3.method:
     //  a)state dropdown daki varsayilan secili secenegin "Select a State" oldugunu verify yapalim
 
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver ;
 
     @BeforeEach
     void setUp() {
-
+        driver  = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.get("https://testcenter.techproeducation.com/index.php?page=dropdown");
@@ -93,6 +94,30 @@ public class C03_DropDownMenu {
 
         //second way
         stateList.forEach(t-> System.out.println(t.getText()));
+    }
+
+    @Test
+    void test03() {
+        //yil,ay,gun dropdown menuleri locate ediniz
+        WebElement year = driver.findElement(By.id("year"));
+        WebElement month = driver.findElement(By.id("month"));
+        WebElement day = driver.findElement(By.id("day"));
+
+        year.sendKeys("2021");
+        month.sendKeys("May");
+        day.sendKeys("19");
+
+    }
+
+    @Test
+    void test04() {
+        //3.method:
+        //  a)state dropdown daki varsayilan secili secenegin "Select a State" oldugunu verify yapalim
+        WebElement states = driver.findElement(By.cssSelector("#state"));
+        Select select = new Select(states);
+        String actualOption = select.getFirstSelectedOption().getText();
+        String expectedOption = "Select a State";
+        Assertions.assertEquals(expectedOption,actualOption);
     }
 
     @AfterEach
