@@ -12,9 +12,10 @@ public class C02_TestBaseClassWork extends TestBase {
     year, mounts,day dropdown menulerden reusable method kullanin
      */
 
+    //http://testcenter.techproeducation.com/index.php?page=javascript-alerts
     @Test
     void voidreusableMethodUsage() {
-        driver.get("https://testcenter.techproeducation.com/index.php?page=dropdown");
+        driver.get("https://testcenter.techproeducation.com/index.php?page=javascript-alerts");
 
         WebElement year = driver.findElement(By.id("year"));
         WebElement month = driver.findElement(By.id("month"));
