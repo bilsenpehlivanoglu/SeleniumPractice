@@ -8,6 +8,16 @@ import utilities.TestBase;
 
 public class C01_Iframe extends TestBase {
 
+    /*
+    iframe 3 sekilde gecis yapilir
+
+    1) driver.switchto().frame(sayfadaki iframe indexini yazzariz)
+    2) driver.switchto().frame(<iframe> id/name attribute>)
+    3) driver.switchto().frame(iframe webelementi)
+
+    ana sayfaya geri donmek icin defaultContent()
+    bir ust frame gecmek icin parentFrame()
+     */
     @Test
     void test01(){
        //https://testcenter.techproeducation.com/index.php?page=iframe
@@ -20,11 +30,13 @@ public class C01_Iframe extends TestBase {
 
        //also test that the text "Applications lists " is on the page
        //also  "Applications lists " yazisinin sayfada oldugunu test edin
+        driver.switchTo().frame(0);
         WebElement applicationsLists = driver.findElement(By.xpath("//*[.='Applications lists']"));
         Assertions.assertTrue(applicationsLists.getText().contains("Applications lists"));
 
        //test that there is an iframe text in the page
        //sayfada iframe yazisinin oldugunu test edin
+        driver.switchTo().defaultContent();
         WebElement iframeText = driver.findElement(By.xpath("//h3"));
         Assertions.assertTrue(iframeText.getText().contains("iframe"));
     }
