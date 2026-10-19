@@ -14,6 +14,8 @@ public class C03_NullPointerException {
 
     Action action;
 
+    String str;
+
     @Test
     void test01() {
         driver = new ChromeDriver();
@@ -32,5 +34,9 @@ public class C03_NullPointerException {
 
     }
 
+    @Test
+    void test04() {
+        System.out.println(str.length());
     }
+}
 
